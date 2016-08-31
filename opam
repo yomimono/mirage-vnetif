@@ -7,13 +7,12 @@ bug-reports: "https://github.com/MagnusS/mirage-vnetif/issues/"
 dev-repo: "https://github.com/MagnusS/mirage-vnetif.git"
 license: "ISC"
 build: [
-  [make]
-]
-install: [make "install"]
-remove: [
-  ["ocamlfind" "remove" "mirage-vnetif"]
+  ["ocaml" "pkg/pkg.ml" "build" "--pinned" pinned]
 ]
 depends: [ 
+  "topkg" {build}
+  "ocamlfind" {build}
+  "ocamlbuild" {build}
   "lwt"
   "mirage-types"
   "cstruct"

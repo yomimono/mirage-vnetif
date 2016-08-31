@@ -1,11 +1,4 @@
 true: annot, bin_annot
 ".git": -traverse
 ".git": not_hygienic
-# Library mirage-vnetif
-"lib/mirage-vnetif.cmxs": use_mirage-vnetif
-<lib/*.ml{,i,y}>: pkg_cstruct
-<lib/*.ml{,i,y}>: pkg_io-page
-<lib/*.ml{,i,y}>: pkg_ipaddr
-<lib/*.ml{,i,y}>: pkg_lwt
-<lib/*.ml{,i,y}>: pkg_mirage-profile
-<lib/*.ml{,i,y}>: pkg_mirage-types
+<lib/*.ml{,i,y}>: package(cstruct io-page ipaddr lwt mirage-profile mirage-types)
